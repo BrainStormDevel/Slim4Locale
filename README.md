@@ -5,7 +5,7 @@ Usage is very simple, just enable this Middleware (in the Middleware part of you
 ```php
 <?php
 
-use BrainStorm\Locale4Slim\Locale;
+use BrainStorm\Slim4Locale\Locale;
 
 $enabled = true; //or false if disabled
 $languages = ['en', 'de', 'it']; //all the languages permitted
