@@ -17,3 +17,4 @@ To retrive what language the project is using, just call:
 ```php
 $request->getAttribute('locale');
 ```
+Simple, isn't it?
