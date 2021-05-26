@@ -1,0 +1,27 @@
+{
+	"name": "brainstorm/locale4slim",
+    "type": "library",
+    "description": "A simple Middleware for Slim 4 to use locale in uri, part of the PerSeo CMS",
+    "keywords": [
+        "Slim",
+        "PerSeo",
+        "Locale"
+    ],
+    "homepage": "https://github.com/BrainStormDevel/perseo",
+    "license": "MIT",
+    "require": {
+		"php": "^7.2 || ^8.0",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.3"
+    },
+	"autoload": {
+        "psr-4": {
+            "BrainStorm\\Locale4Slim": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BrainStorm\\Locale4Slim\\Test\\": "tests/"
+        }
+    }
+}
