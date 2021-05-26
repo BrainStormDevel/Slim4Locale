@@ -31,20 +31,20 @@ class Locale
 
     public function __invoke(Request $request, RequestHandler $handler): Response
     {
-	$fulluri = (string) $request->getUri()->getPath();
-	$basepath = (string) $this->app->getBasePath();
-	$uri = (string) substr($fulluri, strlen($basepath));
-	if (($request->getMethod() == 'GET') && ($this->active) && ($uri != '/')) {
-		preg_match("/^\/([a-zA-Z]{2})\//",$uri,$matches);
-		if (!empty($matches[1]) && in_array($matches[1], $this->languages)) {
-			$fulluri = (string) $basepath . substr($uri, 3);
-			$request = $request->withAttribute('locale', $matches[1]);
-			$request = $request->withUri($request->getUri()->withPath($fulluri));
+		$fulluri = (string) $request->getUri()->getPath();
+		$basepath = (string) $this->app->getBasePath();
+		$uri = (string) substr($fulluri, strlen($basepath));
+		if (($request->getMethod() == 'GET') && ($this->active) && ($uri != '/')) {
+			preg_match("/^\/([a-zA-Z]{2})\//",$uri,$matches);
+			if (!empty($matches[1]) && in_array($matches[1], $this->languages)) {
+				$fulluri = (string) $basepath . substr($uri, 3);
+				$request = $request->withAttribute('locale', $matches[1]);
+				$request = $request->withUri($request->getUri()->withPath($fulluri));
+			}
+			else {
+				throw new \Slim\Exception\HttpNotFoundException($request);
+			}
 		}
-		else {
-			throw new \Slim\Exception\HttpNotFoundException($request);
-		}
-	}
         $response = $handler->handle($request);    
         return $response;
     }
