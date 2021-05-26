@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainStorm\Locale4Slim;
+namespace BrainStorm\Slim4Locale;
 
 use Slim\App;
 use Slim\Psr7\Request;
