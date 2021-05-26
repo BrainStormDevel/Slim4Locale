@@ -1,5 +1,12 @@
 <?php
 
+namespace BrainStorm\Locale4Slim;
+
+use Slim\App;
+use Slim\Psr7\Request;
+use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+use Slim\Psr7\Response;
+
 /*############################################
 	Locale Middleware part of
                  PerSeo CMS
@@ -8,13 +15,6 @@
    https://github.com/BrainStormDevel/perseo
 
 */############################################
-
-namespace BrainStorm\Locale4Slim;
-
-use Slim\App;
-use Slim\Psr7\Request;
-use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
-use Slim\Psr7\Response;
 
 class Locale
 {
