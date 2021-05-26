@@ -16,7 +16,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "BrainStorm\\Slim4Locale": "src/"
+            "BrainStorm\\Slim4Locale\\": "src/"
         }
     },
     "autoload-dev": {
